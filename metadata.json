@@ -1,0 +1,6 @@
+{
+  "name": "Rumbo España",
+  "description": "An immersive Spanish travel, language, and cultural publication.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
