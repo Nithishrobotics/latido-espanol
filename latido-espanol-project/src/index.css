@@ -1,0 +1,261 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Manrope", system-ui, -apple-system, sans-serif;
+  --font-serif: "Lora", Georgia, Cambria, serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --text-xs: 0.8125rem;
+  --text-xs--line-height: 1.35;
+  --text-sm: 0.9375rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 1rem;
+  --text-base--line-height: 1.65;
+  --text-lg: 1.125rem;
+  --text-lg--line-height: 1.55;
+  --text-xl: 1.25rem;
+  --text-xl--line-height: 1.4;
+}
+
+@layer base {
+  :root {
+    --color-paper: #FBF8F1;
+    --color-paper-light: #FFFFFF;
+    --color-paper-muted: #F4EFE6;
+    --color-spanish-red: #A51E2D;
+    --color-sunflower: #E2B342;
+    --color-olive: #52634D;
+    --color-ink: #222522;
+    --color-terracotta: #BA6649;
+    --color-azure: #0284C7;
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.6;
+    font-optical-sizing: auto;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-serif, blockquote, .editorial-quote {
+    font-family: var(--font-serif);
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+  }
+
+  p, span, button, input, select, textarea, .font-sans {
+    font-family: var(--font-sans);
+  }
+
+  p {
+    line-height: 1.7;
+  }
+}
+
+/* Continuously moving, multicolor ribbon inspired by Gemini's top edge. */
+.brand-ribbon {
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    #A51E2D 0%, #E2B342 8%, #52634D 16%, #4285F4 24%, #9B72CB 32%, #D96570 40%,
+    #A51E2D 50%, #E2B342 58%, #52634D 66%, #4285F4 74%, #9B72CB 82%, #D96570 90%, #A51E2D 100%
+  );
+  background-size: 200% 100%;
+  animation: brand-ribbon-flow 6s linear infinite;
+}
+
+@keyframes brand-ribbon-flow {
+  from { background-position: 0 0; }
+  to { background-position: 100% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-ribbon {
+    animation: none;
+    background-position: 0 0;
+  }
+}
+
+/* ========================================================
+   EDITORIAL DESTINATION PHOTOGRAPHY
+   ======================================================== */
+
+/* Natural, gently warmed image treatment */
+.pop-aesthetic-filter {
+  filter: contrast(1.04) saturate(1.08) brightness(1.01);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
+}
+
+.pop-aesthetic-filter:hover {
+  filter: contrast(1.06) saturate(1.12) brightness(1.03);
+}
+
+/* Luminous Mediterranean Sun Glare Overlay */
+.pop-sun-glare {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 82% 14%, rgba(255, 240, 170, 0.45) 0%, rgba(231, 184, 75, 0.22) 28%, rgba(200, 117, 86, 0.1) 50%, transparent 72%);
+  mix-blend-mode: screen;
+}
+
+/* Smooth Editorial Bottom-Up Film Fade Gradient for Pure Legibility */
+.pop-film-fade {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    to top,
+    rgba(18, 17, 16, 0.95) 0%,
+    rgba(18, 17, 16, 0.68) 36%,
+    rgba(18, 17, 16, 0.22) 70%,
+    transparent 100%
+  );
+}
+
+/* Deep Film Fade for Hero */
+.pop-film-fade-hero {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    to top,
+    rgba(18, 17, 16, 0.96) 0%,
+    rgba(18, 17, 16, 0.72) 42%,
+    rgba(18, 17, 16, 0.25) 75%,
+    transparent 100%
+  );
+}
+
+/* Borderless Magazine Spread Image Container */
+.editorial-photo-spread {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  background-color: #121110;
+}
+
+/* Minimalist Editorial Tab with Golden Line Indicator */
+.editorial-tab {
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.editorial-tab::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #E2B342;
+  transform: scaleX(0);
+  transition: transform 0.25s ease;
+  transform-origin: center;
+}
+
+.editorial-tab-active::after {
+  transform: scaleX(1);
+}
+
+/* Focus visibility for accessibility */
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 2px solid #A51E2D;
+  outline-offset: 2px;
+}
+
+/* Subtle Progress Line Animation for Hero Slide Rotation */
+@keyframes slideProgress {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.animate-slide-progress {
+  animation: slideProgress linear forwards;
+}
+
+/* ========================================================
+   LEAFLET MAP INTEGRATION · WARM SEPIA/CREAM OSM FILTER
+   ======================================================== */
+.leaflet-container {
+  background-color: #F7F1E7 !important;
+  font-family: inherit;
+}
+
+/* Warm sepia / grayscale editorial cream filter for Leaflet OSM tiles */
+.leaflet-cream-tiles .leaflet-tile {
+  filter: sepia(38%) saturate(80%) contrast(96%) brightness(99%);
+  -webkit-filter: sepia(38%) saturate(80%) contrast(96%) brightness(99%);
+}
+
+/* Custom terracotta marker pulse & positioning */
+.custom-terracotta-marker-wrapper {
+  background: transparent !important;
+  border: none !important;
+}
+
+.leaflet-control-zoom {
+  border: none !important;
+  box-shadow: none !important;
+  margin-right: 1.25rem !important;
+  margin-bottom: 1.25rem !important;
+}
+
+.leaflet-control-zoom a {
+  background-color: rgba(250, 246, 240, 0.95) !important;
+  color: #222522 !important;
+  border: 1px solid rgba(37, 35, 31, 0.1) !important;
+  border-radius: 0.5rem !important;
+  margin-bottom: 0.25rem !important;
+  box-shadow: none !important;
+  transition: all 0.2s ease !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background-color: #A51E2D !important;
+  color: #FBF8F1 !important;
+}
+
+/* Keep the Spanish source line visible and place its reading aid directly below it. */
+.page-line-translation {
+  display: block;
+  flex: 0 0 100%;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-top: 0.28rem;
+  border-left: 2px solid rgba(82, 99, 77, 0.42);
+  padding-left: 0.55rem;
+  color: #52634D;
+  font-family: Manrope, ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.88em;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.55;
+  text-align: inherit;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 480px) {
+  .page-line-translation {
+    margin-top: 0.22rem;
+    padding-left: 0.42rem;
+    font-size: 0.84em;
+  }
+}
+
+
+/* Mobile Tap Translation Highlight */
+.lan-mobile-highlight {
+  background-color: rgba(226, 179, 66, 0.28) !important;
+  border-radius: 4px;
+  outline: 2px solid rgba(226, 179, 66, 0.45);
+  transition: background-color 0.4s ease, outline 0.4s ease;
+}
