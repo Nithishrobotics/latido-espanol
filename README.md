@@ -1,10 +1,16 @@
-# Rumbo España
+# Latido Español
 
-A responsive Spanish travel and culture website covering destinations, food, festivals, sports, literature, trip planning, Spanish phrases, and cultures across the Spanish-speaking world.
+A premier responsive Spanish travel, language, and cultural portal covering destinations, authentic gastronomy, festivals, sports, literature, smart trip planning, live audio phrases, and a mini-Spotify player featuring classic Spanish music and soundscapes.
 
-## Run it locally
+## Features
 
-Install Node.js 20.19+ (or 22.12+), then run these commands from the project folder:
+- **Editorial Design & Typography:** Elegant layouts powered by `Lora`, `Manrope`, and `IBM Plex Mono`.
+- **Mini-Spotify Player ("Sonidos de España"):** 20+ tracks and sounds with real-time seeking, click-to-seek progress line, and lyric translations.
+- **Lola Language Assistant:** Dedicated floating dual-mode assistant for instant vocabulary translation on hover/touch and bilingual AI chat.
+- **Interactive Leaflet Map & 50+ Destinations:** Monographic guides with high-definition photography and directions.
+- **Customizable Itinerary & Budget Calculator:** Generates custom travel itineraries from 1 to 30 days with live Renfe train and lodging budgets.
+
+## Run Locally
 
 ```bash
 npm install
@@ -13,26 +19,10 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
-## Deploy the website
+## Build for Production
 
-This is a static Vite website. No API key or `.env` file is required to deploy it.
+```bash
+npm run build
+```
 
-1. Install the project dependencies: `npm install`
-2. Create the production website: `npm run build`
-3. Upload the contents of the generated `dist` folder to a static hosting service.
-
-For a hosting service that builds from the project source, use:
-
-- Build command: `npm run build`
-- Output / publish directory: `dist`
-- Environment variables: none required
-
-The `rumbo-espana-site.zip` archive contains only the already-built `dist` site and can be uploaded to a static host that accepts a prebuilt site. `rumbo-espana-project.zip` contains the source code and the current `dist` build. It excludes `node_modules` and local `.env` files.
-
-## Translation help
-
-The header's **Traducir** control keeps the Spanish source text visible and adds translations directly below visible text on the page. It offers English, French, German, Italian, and Portuguese. It uses the browser's built-in on-device Translator API when available, so the site needs no translation API key or translation server. The browser may download its language model the first time a language is used. Translation support currently depends on browser and device support (desktop Chrome); in unsupported browsers the full Spanish site remains available and the translation control explains the limitation.
-
-## Preview the production build locally
-
-After building, run `npm run preview` and open the local URL printed by Vite.
+The production-ready assets will be in `dist/`.

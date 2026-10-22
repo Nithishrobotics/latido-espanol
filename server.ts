@@ -108,7 +108,7 @@ async function handleLanguageAssistantApi(req: IncomingMessage, res: ServerRespo
       if (!apiKey) {
         sendJsonResponse(res, 200, {
           translation: text,
-          meaning: `Direct Spanish phrase from Rumbo España (${targetLanguageName}).`,
+          meaning: `Direct Spanish phrase from Latido Español (${targetLanguageName}).`,
           partOfSpeech: 'Expresión',
           pronunciation: text.toLowerCase(),
           category: 'Español',
@@ -117,7 +117,7 @@ async function handleLanguageAssistantApi(req: IncomingMessage, res: ServerRespo
         return true;
       }
 
-      const prompt = `You are a Spanish language and cultural expert for the travel magazine "Rumbo España".
+      const prompt = `You are a Spanish language and cultural expert for the travel magazine "Latido Español".
 Analyze the Spanish text/word: "${text}".
 Translate it accurately and idiomatically into ${targetLanguageName}.
 Return a strictly valid JSON object without markdown formatting with the following fields:
@@ -146,7 +146,7 @@ Return a strictly valid JSON object without markdown formatting with the followi
         console.error('Gemini API explain error:', errText);
         sendJsonResponse(res, 200, {
           translation: text,
-          meaning: `Spanish phrase from Rumbo España (${targetLanguageName}).`,
+          meaning: `Spanish phrase from Latido Español (${targetLanguageName}).`,
           partOfSpeech: 'Expresión',
           pronunciation: text.toLowerCase(),
           category: 'Español',
@@ -169,7 +169,7 @@ Return a strictly valid JSON object without markdown formatting with the followi
 
       sendJsonResponse(res, 200, {
         translation: text,
-        meaning: `Spanish phrase from Rumbo España (${targetLanguageName}).`,
+        meaning: `Spanish phrase from Latido Español (${targetLanguageName}).`,
         partOfSpeech: 'Expresión',
         pronunciation: text.toLowerCase(),
         category: 'Español',
@@ -205,13 +205,13 @@ Return a strictly valid JSON object without markdown formatting with the followi
       const apiKey = getGeminiApiKey();
       if (!apiKey) {
         sendJsonResponse(res, 200, {
-          reply: '¡Hola! Soy Rumbo, tu asistente de español. Puedes pasar el ratón sobre cualquier texto de la web para ver su significado.',
+          reply: '¡Hola! Soy Lola, tu asistente de español en Latido Español. Puedes pasar el ratón o pulsar sobre cualquier texto de la web para ver su traducción.',
           suggestedPrompts: ['¿Cómo pedir comida en España?', '¿Qué es la sobremesa?', 'Frases para viajar']
         });
         return true;
       }
 
-      const systemInstruction = `You are "Lola", an authentic, warm, charming, and knowledgeable Spanish language tutor and travel companion for "Rumbo España".
+      const systemInstruction = `You are "Lola", an authentic, warm, charming, and knowledgeable Spanish language tutor and travel companion for "Latido Español".
 LANGUAGE DIRECTIVE:
 - The user can type and ask questions in ANY language (English, French, German, Italian, Portuguese, Hindi, Spanish, Chinese, Japanese, etc.).
 - You must always converse and write your answers in the user's language (default: ${targetLanguageName}), so that travelers and language learners can easily understand and learn!
@@ -377,9 +377,9 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 if (!process.env.NODE_ENV && !existsSync(path.join(projectRoot, 'index.html'))) {
-  throw new Error('Run the Rumbo España server from the project root.');
+  throw new Error('Run the Latido Español server from the project root.');
 }
 
 server.listen(port, '0.0.0.0', () => {
-  console.log(`Rumbo España is available at http://localhost:${port}`);
+  console.log(`Latido Español is available at http://localhost:${port}`);
 });

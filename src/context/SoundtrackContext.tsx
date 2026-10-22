@@ -24,6 +24,14 @@ interface SoundtrackContextType {
 
 const SoundtrackContext = createContext<SoundtrackContextType | null>(null);
 
+const resolveAudioUrl = (url?: string): string => {
+  if (!url) return '';
+  const base = import.meta.env.BASE_URL || '/';
+  const cleanBase = base.endsWith('/') ? base : `${base}/`;
+  const cleanPath = url.startsWith('/') ? url.slice(1) : url;
+  return `${cleanBase}${cleanPath}`;
+};
+
 export const SoundtrackProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   // Restore last played track from localStorage or default to Romanza Española
   const [currentTrack, setCurrentTrack] = useState<SoundTrack>(() => {
@@ -89,7 +97,7 @@ export const SoundtrackProvider: React.FC<{ children: React.ReactNode }> = ({ ch
     const audio = new Audio();
     audio.preload = 'metadata';
     if (currentTrack.audioUrl) {
-      audio.src = currentTrack.audioUrl;
+      audio.src = resolveAudioUrl(currentTrack.audioUrl);
     }
     audioElementRef.current = audio;
 
@@ -276,9 +284,9 @@ export const SoundtrackProvider: React.FC<{ children: React.ReactNode }> = ({ ch
       // Real audio recording playback
       stopSynthLoop();
       const audio = audioElementRef.current;
-      const targetSrc = window.location.origin + track.audioUrl;
-      if (!audio.src || (audio.src !== targetSrc && audio.src !== track.audioUrl)) {
-        audio.src = track.audioUrl;
+      const finalAudioUrl = resolveAudioUrl(track.audioUrl);
+      if (!audio.src || !audio.src.endsWith(finalAudioUrl)) {
+        audio.src = finalAudioUrl;
       }
       audio.volume = volume;
       
@@ -322,9 +330,9 @@ export const SoundtrackProvider: React.FC<{ children: React.ReactNode }> = ({ ch
       setIsMiniPlayerOpen(true);
       if (currentTrack.audioUrl && audioElementRef.current) {
         const audio = audioElementRef.current;
-        const targetSrc = window.location.origin + currentTrack.audioUrl;
-        if (!audio.src || (audio.src !== targetSrc && audio.src !== currentTrack.audioUrl)) {
-          audio.src = currentTrack.audioUrl;
+        const finalAudioUrl = resolveAudioUrl(currentTrack.audioUrl);
+        if (!audio.src || !audio.src.endsWith(finalAudioUrl)) {
+          audio.src = finalAudioUrl;
         }
         audio.volume = volume;
         if (currentTime > 0) {

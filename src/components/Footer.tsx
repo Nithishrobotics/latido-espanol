@@ -27,14 +27,14 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab }) => {
           <div className="lg:col-span-5 space-y-4">
             <div className="flex items-center gap-3">
               <div className="w-9 h-9 rounded-full bg-gradient-to-br from-[#A51E2D] to-[#BA6649] text-[#FBF8F1] flex items-center justify-center font-serif font-black text-sm">
-                RE
+                LE
               </div>
               <span className="text-2xl font-serif font-black tracking-tight text-[#FBF8F1]">
-                RUMBO ESPAÑA
+                LATIDO ESPAÑOL
               </span>
             </div>
             <p className="font-serif italic text-lg text-[#E2B342]">
-              «No solo visites España. Siéntela.»
+              «El pulso vivo de España: cultura, música y viaje.»
             </p>
             <p className="text-sm text-[#FBF8F1]/75 leading-relaxed max-w-md">
               Publicación digital independiente concebida para acercar al viajero a la autenticidad peninsular: arquitectura, gastronomía, fiestas, juegos tradicionales, literatura y aprendizaje vivo del español.
@@ -155,7 +155,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab }) => {
         {/* Bottom Utility Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#FBF8F1]/60">
           <div className="flex items-center gap-2">
-            <span>© 2026 Rumbo España</span>
+            <span>© 2026 Latido Español</span>
             <span aria-hidden="true">·</span>
             <span>Edición Digital de Viajes y Cultura Española</span>
           </div>

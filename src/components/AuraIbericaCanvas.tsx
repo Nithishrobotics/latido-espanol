@@ -346,7 +346,7 @@ export const AuraIbericaCanvas: React.FC<AuraIbericaCanvasProps> = ({
                 fontWeight="bold"
                 letterSpacing="1.5"
               >
-                RUMBO ESPAÑA
+                LATIDO ESPAÑOL
               </text>
             </g>
           </svg>

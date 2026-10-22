@@ -278,7 +278,7 @@ function generateHeuristicExplanation(text: string, targetLang: string): Explana
   return {
     sourceText: text,
     translation: `«${text}»`,
-    meaning: `Spanish term from Rumbo España. (Translating into ${langLabel}).`,
+    meaning: `Spanish term from Latido Español. (Translating into ${langLabel}).`,
     partOfSpeech,
     pronunciation: generateBasicPhonetics(text),
     category,
@@ -362,7 +362,7 @@ function generateLocalChatbotResponse(
 
   if (lower.includes('hola') || lower.includes('hello') || lower.includes('hi') || lower.includes('buenos dias')) {
     return {
-      reply: `¡Hola! 👋 I'm **Lola**, your personal Spanish language companion and cultural guide for *Rumbo España*.\n\n✨ **Hover Translation:** Simply move your mouse over any Spanish text on the website to see its live translation and pronunciation in **${langLabel}** down in the inspector dock.\n\nYou can ask me anything about Spanish vocabulary, ordering tapas, grammar (like ser vs estar), or travel tips. What would you like to explore today?`,
+      reply: `¡Hola! 👋 I'm **Lola**, your personal Spanish language companion and cultural guide for *Latido Español*.\n\n✨ **Hover Translation:** Simply move your mouse over any Spanish text on the website to see its live translation and pronunciation in **${langLabel}** down in the inspector dock.\n\nYou can ask me anything about Spanish vocabulary, ordering tapas, grammar (like ser vs estar), or travel tips. What would you like to explore today?`,
       followUps: [
         'What does «Sobremesa» mean in Spain?',
         'How do I order a beer and tapas like a local?',

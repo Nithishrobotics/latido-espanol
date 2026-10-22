@@ -193,8 +193,8 @@ export const ItinerarySection: React.FC = () => {
 
   const handleCopyItinerary = () => {
     const textLines = [
-      `RUMBO ESPAÑA — ITINERARIO PERSONALIZADO`,
-      `«No solo visites España. Siéntela.»`,
+      `LATIDO ESPAÑOL — ITINERARIO PERSONALIZADO`,
+      `«El pulso vivo de España: cultura, música y viaje.»`,
       `Duración: ${totalDays} días (${nightsCount} noches)`,
       `Lugares a visitar: ${routePlacesSummary.map((p) => `${p.city} (${p.daysCount} d)`).join(' ➔ ')}`,
       `Presupuesto estimado: €${grandTotal.toFixed(2)} para ${travelers} viajero(s)\n`

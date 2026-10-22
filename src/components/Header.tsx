@@ -96,18 +96,18 @@ export const Header: React.FC<HeaderProps> = ({
             <button
               onClick={() => handleTabClick('inicio')}
               className="flex items-center gap-2.5 sm:gap-3 text-left group focus-visible:outline-none cursor-pointer"
-              aria-label="Rumbo España - Portada"
+              aria-label="Latido Español - Portada"
             >
               <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-[#A51E2D] via-[#BA6649] to-[#E2B342] text-[#FBF8F1] flex items-center justify-center font-serif font-black text-sm group-hover:scale-105 transition-transform overflow-hidden shadow-sm shrink-0">
-                <span className="relative z-10">RE</span>
+                <span className="relative z-10">LE</span>
                 <div className="absolute inset-0 bg-radial from-[#E2B342]/30 to-transparent pointer-events-none" />
               </div>
               <div className="flex flex-col">
                 <span className="text-base sm:text-xl xl:text-xl 2xl:text-2xl font-serif font-black tracking-tight text-[#A51E2D] group-hover:text-[#861A27] transition-colors whitespace-nowrap leading-tight">
-                  RUMBO ESPAÑA
+                  LATIDO ESPAÑOL
                 </span>
                 <span className="text-[10px] tracking-widest text-[#52634D] uppercase font-sans font-bold whitespace-nowrap hidden 2xl:block leading-tight">
-                  No solo visites España. Siéntela.
+                  El pulso vivo de España y su cultura
                 </span>
               </div>
             </button>

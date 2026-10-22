@@ -53,7 +53,7 @@ export const LanChatbot: React.FC = () => {
     {
       id: 'welcome',
       role: 'assistant',
-      content: `¡Hola! 👋 I'm **Lola**, your personal Spanish language tutor and travel companion for *Rumbo España*.\n\n✨ **Live Text Translator:** Hover on PC or tap on mobile any Spanish text on the website to see its translation right above!\n\nYou can **type to me in your own language** (English, French, Hindi, German, etc.) and I will explain Spanish vocabulary, food & tapas, train travel, grammar, and local customs. How can I help you today?`,
+      content: `¡Hola! 👋 I'm **Lola**, your personal Spanish language tutor and travel companion for *Latido Español*.\n\n✨ **Live Text Translator:** Hover on PC or tap on mobile any Spanish text on the website to see its translation right above!\n\nYou can **type to me in your own language** (English, French, Hindi, German, etc.) and I will explain Spanish vocabulary, food & tapas, train travel, grammar, and local customs. How can I help you today?`,
       timestamp: Date.now(),
       suggestedFollowUps: [
         'How do I order tapas and a caña like a local?',

@@ -422,24 +422,43 @@ export const SPANISH_DICTIONARY: Record<string, DictionaryEntry> = {
   },
 
   // WEBSITE SPECIFIC SECTION TITLES & CONCEPTS
-  'rumbo espana': {
-    spanish: 'Rumbo España',
-    translation: 'Course to Spain / Destination Spain',
-    meaning: 'Heading towards Spain; an adventurous voyage exploring the sights, flavors, and culture of Spain.',
-    partOfSpeech: 'Title / Idiom',
-    pronunciation: 'ROOM-boh es-PAH-nyah',
-    category: 'Viajes',
+  'latido espanol': {
+    spanish: 'Latido Español',
+    translation: 'Spanish Heartbeat / The Pulse of Spain',
+    meaning: 'The living, rhythmic pulse of Spanish culture, music, gastronomy, and peninsular life.',
+    partOfSpeech: 'Title / Cultural Concept',
+    pronunciation: 'lah-TEE-doh es-pah-NYOL',
+    category: 'Cultura',
     translations: {
-      en: 'Course to Spain / Heading to Spain',
-      fr: 'Cap sur l’Espagne',
-      de: 'Kurs auf Spanien',
-      it: 'Rotta verso la Spagna',
-      pt: 'Rumo à Espanha',
-      ja: 'スペインへの旅路',
-      zh: '前往西班牙之程'
+      en: 'Spanish Heartbeat / Pulse of Spain',
+      fr: 'Le Pouls / Battement Espagnol',
+      de: 'Der Spanische Herzschlag',
+      it: 'Il Battito Spagnolo',
+      pt: 'O Batimento Espanhol',
+      ja: 'スペインの鼓動',
+      zh: '西班牙的心跳与律动'
     },
-    culturalNote: '"Poner rumbo a..." means to set sail or chart a course toward a destination.',
-    exampleSentence: { spanish: 'Ponemos rumbo a España con la maleta llena de sueños.', english: 'We set our course to Spain with our suitcases full of dreams.' }
+    culturalNote: '«Latido» literally means heartbeat; metaphorically it denotes the vibrant energy, flamenco rhythms, and deep passion of Spain.',
+    exampleSentence: { spanish: 'Siente el latido español en cada plaza, melodía y bocado.', english: 'Feel the Spanish heartbeat in every square, melody, and bite.' }
+  },
+  'latido': {
+    spanish: 'Latido',
+    translation: 'Heartbeat / Pulse',
+    meaning: 'A heartbeat or pulsation; the vital rhythmic impulse of life or music.',
+    partOfSpeech: 'Sustantivo masculino',
+    pronunciation: 'lah-TEE-doh',
+    category: 'Cultura',
+    translations: {
+      en: 'Heartbeat / Throb / Pulse',
+      fr: 'Battement de cœur / Pulsation',
+      de: 'Herzschlag',
+      it: 'Battito cardiaco',
+      pt: 'Batimento',
+      ja: '心拍・鼓動',
+      zh: '心跳 / 脉动'
+    },
+    culturalNote: 'Used often in Spanish poetry and flamenco to describe emotional intensity.',
+    exampleSentence: { spanish: 'El latido del flamenco resuena en la noche andaluza.', english: 'The pulse of flamenco resonates in the Andalusian night.' }
   },
   'inicio': {
     spanish: 'Inicio',
